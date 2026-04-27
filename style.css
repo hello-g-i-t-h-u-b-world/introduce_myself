@@ -174,6 +174,80 @@ section { padding: 100px 0; }
     margin-bottom: 20px;
 }
 
+/* To-Be 모델 섹션 스타일 */
+.to-be {
+    background: linear-gradient(180deg, var(--bg-color) 0%, #1e293b 100%);
+    padding: 80px 0;
+}
+
+.tobe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.tobe-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.tobe-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.1);
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.tobe-icon {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: inline-block;
+    
+    /* 숫자에 그라데이션 적용 */
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* 약간의 투명도와 두께감 조절 */
+    opacity: 0.8;
+    letter-spacing: -2px;
+    font-family: 'Montserrat', sans-serif; /* 굵은 폰트가 있다면 추천 */
+}
+
+.tobe-card:hover .tobe-icon {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* 카드의 나머지 텍스트와 간격 조정 */
+.tobe-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color); /* 제목은 흰색 계열로 유지 */
+    font-weight: 700;
+}
+
+/* 모바일 반응형 조절 */
+@media (max-width: 768px) {
+    .tobe-grid {
+        grid-template-columns: 1fr 1fr; /* 모바일에서 2열 배치 */
+    }
+}
+
+@media (max-width: 480px) {
+    .tobe-grid {
+        grid-template-columns: 1fr; /* 아주 작은 화면에서 1열 배치 */
+    }
+}
+
 /* 푸터 */
 footer {
     text-align: center;
